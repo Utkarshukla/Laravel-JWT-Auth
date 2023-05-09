@@ -27,5 +27,6 @@ use App\Http\Controllers\API\UserController;
     Route::get('/profile',[UserController::class,'profile']);
     Route::post('/profile-update',[UserController::class,'updateProfile']);
     Route::get('/send-verify-mail/{email}', [UserController::class,'sendVerifyMail']);
+    Route::get('/refresh-token',[UserController::class,'refreshToken']);
 
 //}]);

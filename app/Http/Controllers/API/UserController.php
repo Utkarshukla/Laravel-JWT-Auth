@@ -106,6 +106,9 @@ class UserController extends Controller
             }
             $user =User::find($request->id);
             $user->name=$request->name;
+            if ($user->email != $request->email) {
+                $user->is_verified = 0;
+            }
             $user->email=$request->email;
             $user->save();
             return response()->json([
@@ -166,6 +169,7 @@ class UserController extends Controller
             $datetime =Carbon::now()->format('Y-m-d H:i:s');
             $user = User::find($user[0]['id']);
             $user->remember_token='';
+            $user->is_verified =1;
             $user->email_verified_at = $datetime;
             $user->save();
             return "<h1 style='color:green'>Email verified Successfully</h1>";
@@ -174,4 +178,19 @@ class UserController extends Controller
         }
         
     }
+
+    // public function refreshToken(){
+    //     if (auth()->user()) {
+    //         return $this->respondWithToken(auth()->refresh());
+    //     } else {
+    //         return response()->json([
+    //             'success'=>false,
+    //             'msg'=> 'User in not Authenticated',
+    //         ]);
+    //     }
+        
+
+    // }
+    //refresh function error but still module working and giving new token -_<
+
 }
