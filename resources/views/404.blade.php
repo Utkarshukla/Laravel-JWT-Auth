@@ -1,1 +1,1 @@
-<h1>Not Fount</h1>
+<h1 style="color: red">The link has expired or used successfully</h1>

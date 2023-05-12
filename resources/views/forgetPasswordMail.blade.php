@@ -7,9 +7,9 @@
     <title>{{$data['title']}}</title>
 </head>
 <body>
-    <h6>Hello ,Dear User this email sended for verifcation your email in Laravel API project</h6>
+    <h6>Hello ,Dear User this email sended for reset password in Laravel API project</h6>
     <p>{{$data['body']}}</p><br>
-    <a href="{{ $data['url']}}">Click Here TO verify Mail.</a>
+    <a href="{{ $data['url']}}">Click Here TO reset Password</a>
     <p>Thank You.</p>
 </body>
 </html>
